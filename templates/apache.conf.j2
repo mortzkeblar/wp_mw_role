@@ -3,8 +3,8 @@
   ServerName {{ wp_mw_role_vhost_name }}
   ServerAlias www.{{ wp_mw_role_vhost_name }}
   DocumentRoot {{ wp_mw_role_vhost_webroot }}/wordpress/
-  ErrorLog {{ apache_log_dir }}/error.log
-  CustomLog {{ apache_log_dir }}/access.log combined
+  ErrorLog {{ wp_mw_role_apache_log_dir }}/error.log
+  CustomLog {{ wp_mw_role_apache_log_dir }}/access.log combined
 
   <Directory {{ wp_mw_role_vhost_webroot }}/wordpress>
     Options -Indexes
