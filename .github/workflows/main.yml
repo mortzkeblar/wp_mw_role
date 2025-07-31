@@ -1,0 +1,20 @@
+name: Molecule Pipeline 
+on: push
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v4
+
+      - name: Install dependencies
+        run: ~/.local/bin/poetry install --no-root
+
+      - name: Run Molecule tests
+        run: ~/.local/bin/poetry run molecule test

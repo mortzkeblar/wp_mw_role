@@ -20,4 +20,4 @@
                   password: "{{ mysql_password }}"
                   priv: "wpdb.*:ALL"
 
-      - role: wp_mw_role
+      - role: mortzkeblar.wp_mw_role
