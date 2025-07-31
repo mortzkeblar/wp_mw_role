@@ -3,8 +3,8 @@
   ansible.builtin.file:
     path: "{{ wp_mw_role_vhost_webroot }}"
     state: directory
-    owner: "{{ apache_user }}"
-    group: "{{ apache_group }}"
+    owner: "{{ wp_mw_role_apache_user }}"
+    group: "{{ wp_mw_role_apache_group }}"
     mode: '0755'
 
 - name: Create conf.d/ directory
