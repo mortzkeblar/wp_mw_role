@@ -26,9 +26,9 @@
 - name: Set up Apache vhost config
   ansible.builtin.template:
     src: "apache.conf.j2"
-    dest: "{{ apache_conf_dir }}/conf.d/{{ wp_mw_role_vhost_conf_name }}.conf"
-    owner: "{{ apache_user }}"
-    group: "{{ apache_group }}"
+    dest: "{{ wp_mw_role_apache_conf_dir }}/conf.d/{{ wp_mw_role_vhost_conf_name }}.conf"
+    owner: "{{ wp_mw_role_apache_user }}"
+    group: "{{ wp_mw_role_apache_group }}"
     mode: '0755'
   notify: Reload Apache
 
@@ -37,6 +37,6 @@
     path: "{{ item }}"
     state: absent
   loop:
-    - "{{ apache_conf_dir }}/sites-enabled/000-default.conf"
-    - "{{ apache_conf_dir }}/conf.d/welcome.conf"
+    - "{{ wp_mw_role_apache_conf_dir }}/sites-enabled/000-default.conf"
+    - "{{ wp_mw_role_apache_conf_dir }}/conf.d/welcome.conf"
   notify: Restart Apache
