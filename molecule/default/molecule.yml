@@ -2,6 +2,11 @@
 driver:
   name: vagrant
 
+dependency:
+  name: galaxy
+  options:
+    requirements-file: requirements.yml
+
 role_name_check: 1
 
 platforms:
