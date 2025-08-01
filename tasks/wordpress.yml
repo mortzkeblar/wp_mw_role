@@ -28,6 +28,7 @@
   loop: "{{ files.files }}"
 
 - name: Search directories in WordPress root path
+  changed_when: false
   ansible.builtin.find:
     paths: "{{ wp_mw_role_vhost_webroot }}/wordpress/"
     file_type: directory
