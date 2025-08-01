@@ -16,6 +16,7 @@
     group: "{{ wp_mw_role_apache_group }}"
 
 - name: Search files in WordPress root path
+  changed_when: false
   ansible.builtin.find:
     paths: "{{ wp_mw_role_vhost_webroot }}/wordpress/"
     file_type: file
