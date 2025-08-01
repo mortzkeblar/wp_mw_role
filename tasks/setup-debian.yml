@@ -2,6 +2,7 @@
 - name: Update APT cache
   ansible.builtin.apt:
     update_cache: true
+    cache_valid_time: 30000
 
 - name: Install Apache packages with APT
   ansible.builtin.apt:

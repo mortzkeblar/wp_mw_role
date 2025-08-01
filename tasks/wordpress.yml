@@ -7,6 +7,7 @@
     creates: "{{ wp_mw_role_vhost_webroot }}/wordpress/"
 
 - name: Set ownership
+  changed_when: false
   ansible.builtin.file:
     path: "{{ wp_mw_role_vhost_webroot }}"
     state: directory
@@ -33,6 +34,7 @@
   register: directories
 
 - name: Changes permission to directories in WordPress root path
+  changed_when: false
   ansible.builtin.file:
     path: "{{ item.path }}"
     mode: "0750"
@@ -43,3 +45,4 @@
     src: "wp-config.php.j2"
     dest: "{{ wp_mw_role_vhost_webroot }}/wordpress/wp-config.php"
     mode: "0755"
+    force: false
