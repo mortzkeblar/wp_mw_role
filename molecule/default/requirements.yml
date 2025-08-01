@@ -2,5 +2,3 @@
 roles:
   - name: geerlingguy.mysql
     version: 5.0.0 
-  - name: mortzkeblar.wp_mw_role
-    force: true
