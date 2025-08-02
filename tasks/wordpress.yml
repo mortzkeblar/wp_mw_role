@@ -23,6 +23,7 @@
   register: files
 
 - name: Changes permissions to files in WordPress root path
+  changed_when: false
   ansible.builtin.file:
     path: "{{ item.path }}"
     mode: "0640"
